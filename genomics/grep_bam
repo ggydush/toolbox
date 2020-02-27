@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+grep_file=$1
+bam_file=$2
+
+if [ $# -eq 2 ] # both args exist
+  then
+    if [ ! -f $1 ]; then
+        opt="$grep_file"
+    else
+        opt="-f $grep_file"
+    fi
+        (samtools view -H $bam_file; samtools view $bam_file | LC_ALL=C fgrep ${opt} - ) | samtools sort -
+    exit 0
+fi
+
+echo -e "usage: grep_bam <file|text to grep> <bam_file>\n\nReturns grepped BAM file (with header) to stdout"
+exit 1
