@@ -8,7 +8,7 @@ echo "
 "
 
 # ZSH configuration
-export ZSH="/Users/gregorygydush/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX=true
 
 plugins=(
@@ -28,6 +28,4 @@ fi
 
 # Fixing PATH
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$PATH:$HOME/bin"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$HOME/bin:$HOME/.local/bin:$PATH"

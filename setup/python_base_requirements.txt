@@ -1,0 +1,12 @@
+black
+click
+ipython
+jupyterlab
+nox
+numpy
+pandas
+poetry
+pre-commit
+pylint
+pytest
+tabview
