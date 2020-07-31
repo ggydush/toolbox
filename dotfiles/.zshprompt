@@ -18,6 +18,8 @@ function _user_host() {
     me="%n@%m"
   elif [[ "$HOST" == *"MacBook"* ]]; then
     me="macbook"
+  elif [[ "$HOST" == "MBP"* ]]; then
+    me="macbook"
   elif [[ $LOGNAME != $USER ]]; then
     me="%n"
   fi

@@ -1,9 +1,9 @@
-# Install python
-pyenv install 3.8.3
-pyenv global 3.8.3
+# # Install python
+# pyenv install 3.8.3
+# pyenv global 3.8.3
 
-# Install requirements
-pip install -r python_base_requirements.txt
+# # Install requirements
+# pip install -r python_base_requirements.txt
 
 # Add code formatting to jupyterlab
 jupyter labextension install @ryantam626/jupyterlab_code_formatter
