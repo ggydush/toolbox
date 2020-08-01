@@ -19,12 +19,23 @@ brew cask install zoomus
 
 # Install command line apps
 brew install fortune
+brew install node
 brew install pyenv
 brew install zsh
+
+# Install ohmyzsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Setup environment
 SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ln -s $(dirname $SCRIPTPATH)/dotfiles/.zsh* ~/
+
+# Setup python
+sh setup_python.sh
+
+# Poetry completions
+mkdir $ZSH/plugins/poetry
+poetry completions zsh > $ZSH/plugins/poetry/_poetry
 
 echo "
 There are some things I cannot automate...
@@ -42,5 +53,5 @@ Install Alfred and change settings to Google Drive location
 
 Add iterm settings profile in ~/dev/toolbox/dotfiles/
 
-Login to Chrome to sync all extensions
+Login to all other Chrome, Evernote, Todo, Messages, etc. to sync settings
 "
